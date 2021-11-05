@@ -1,0 +1,28 @@
+
+   [36mcreate[0m : git\
+   [36mcreate[0m : git\public\
+   [36mcreate[0m : git\public\javascripts\
+   [36mcreate[0m : git\public\images\
+   [36mcreate[0m : git\public\stylesheets\
+   [36mcreate[0m : git\public\stylesheets\style.css
+   [36mcreate[0m : git\routes\
+   [36mcreate[0m : git\routes\index.js
+   [36mcreate[0m : git\routes\users.js
+   [36mcreate[0m : git\views\
+   [36mcreate[0m : git\views\error.pug
+   [36mcreate[0m : git\views\index.pug
+   [36mcreate[0m : git\views\layout.pug
+   [36mcreate[0m : git\app.js
+   [36mcreate[0m : git\package.json
+   [36mcreate[0m : git\bin\
+   [36mcreate[0m : git\bin\www
+
+   change directory:
+     > cd git
+
+   install dependencies:
+     > npm install
+
+   run the app:
+     > SET DEBUG=git:* & npm start
+

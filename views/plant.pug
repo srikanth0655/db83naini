@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - const plant = ['plant_type','size','age']
+  - let results;
+  script.
+    function buy(x){
+      alert('Purchased Item: ' + x)
+   } 
+  div(class='container-fluid')
+    div(class='row')
+      each results, index in plant
+        div(class='col-sm-2' onclick='buy('+index+')') #{results}
