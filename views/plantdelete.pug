@@ -1,0 +1,51 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let plantid = toShow._id 
+  - let plant_type = toShow.plant_type 
+  - let plantage = toShow.age
+  - let plantsize = toShow.size 
+  - let actionid = "/resource/plant/" + plantid 
+  script let actionid = "#{actionid}" 
+  div 
+    div.row 
+      div(class='costumeAttr mr-3') plant ID is: 
+      div #{plantid} 
+    div.row 
+      div(class='costumeAttr mr-3') plant Type is: 
+      div #{plant_type} 
+    div.row 
+      div(class='costumeAttr mr-3') plant Size is: 
+      div #{plantsize} 
+    div.row 
+      div(class='costumeAttr mr-3') plant age is: 
+      div #{plantage} 
+
+      button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+
+
+  script. 
+    function cancel() { 
+      // Go back to the home page for the plant collection 
+      window.location.href='/plant' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'      
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/plant' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }

@@ -1,0 +1,39 @@
+extends layout 
+ 
+block content 
+  h1= title 
+
+  - let plantid = toShow._id 
+  - let plant_type = toShow.plant_type 
+  - let plantage = toShow.age
+  - let plantsize = toShow.size 
+ 
+  form(id='plantForm', action="/resource/plant/"+plantid, method="PUT") 
+    div.form-group 
+        label.costumeAttr(for='plant_type') plant  type 
+        input#plant_type(type='text', name='plant_type' value=plant_type) 
+    div.form-group 
+        label.costumeAttr(for='size') plant size 
+        input#size(type='text', name='size' value=plantsize) 
+    div.form-group 
+        label.costumeAttr(for='age') plant age 
+        input#age(type='number', name='age' value=plantage) 
+    input(type="submit") 
+ 
+  script. 
+    document.forms['plantForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'PUT', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    }); 
