@@ -19,6 +19,9 @@ block content
         label.costumeAttr(for='age') plant age 
         input#age(type='number', name='age' value=plantage) 
     input(type="submit") 
+
+
+    button(class="btn btn-secondary m-2" onclick="window.location.href='/restaurant'") Cancel
  
   script. 
     document.forms['plantForm'].addEventListener('submit', (event) => { 

@@ -8,6 +8,9 @@ block content
   - let plantage = toShow.age
   - let plantsize = toShow.size 
   - let actionid = "/resource/plant/" + plantid 
+
+
+
   script let actionid = "#{actionid}" 
   div 
     div.row 
@@ -26,6 +29,7 @@ block content
       button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
     button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
 
+button(class="btn btn-secondary m-2" onclick="window.location.href='/restaurant'") Cancel
 
   script. 
     function cancel() { 

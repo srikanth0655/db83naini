@@ -9,6 +9,7 @@ block content
       alert('Purchased Item: ' + x)
    } 
   div(class='container-fluid')
+    a(href = "plant/create") create
     div(class='row')
       each result, index in plant
         div(class='col-sm-2' onclick='buy('+index+')') #{result}
@@ -18,3 +19,9 @@ block content
           div(class='col-sm-2' onclick='buy('+index+')') #{result.plant_type}
           div(class='col-sm-2' onclick='buy('+index+')') #{result.size}
           div(class='col-sm-2' onclick='buy('+index+')') #{result.age}
+
+          a(href = "plant/detail/?id=" + x._id) detail
+
+          a(href = "plant/update/?id=" + x._id) update
+
+          a(href = "plant/delete/?id=" + x._id) delete 
