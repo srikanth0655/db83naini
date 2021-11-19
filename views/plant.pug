@@ -20,8 +20,8 @@ block content
           div(class='col-sm-2' onclick='buy('+index+')') #{result.size}
           div(class='col-sm-2' onclick='buy('+index+')') #{result.age}
 
-          a(href = "plant/detail/?id=" + x._id) detail
+          a(href = "plant/detail/?id=" + result._id) detail
 
-          a(href = "plant/update/?id=" + x._id) update
+          a(href = "plant/update/?id=" + result._id) update
 
-          a(href = "plant/delete/?id=" + x._id) delete 
+          a(href = "plant/delete/?id=" + result._id) delete 

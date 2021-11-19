@@ -10,18 +10,18 @@ block content
  
   form(id='plantForm', action="/resource/plant/"+plantid, method="PUT") 
     div.form-group 
-        label.costumeAttr(for='plant_type') plant  type 
+        label.plantAttr(for='plant_type') plant  type 
         input#plant_type(type='text', name='plant_type' value=plant_type) 
     div.form-group 
-        label.costumeAttr(for='size') plant size 
+        label.plantAttr(for='size') plant size 
         input#size(type='text', name='size' value=plantsize) 
     div.form-group 
-        label.costumeAttr(for='age') plant age 
+        label.plantAttr(for='age') plant age 
         input#age(type='number', name='age' value=plantage) 
     input(type="submit") 
 
 
-    button(class="btn btn-secondary m-2" onclick="window.location.href='/restaurant'") Cancel
+    button(class="btn btn-secondary m-2" onclick="window.location.href='/plant'") Cancel
  
   script. 
     document.forms['plantForm'].addEventListener('submit', (event) => { 
